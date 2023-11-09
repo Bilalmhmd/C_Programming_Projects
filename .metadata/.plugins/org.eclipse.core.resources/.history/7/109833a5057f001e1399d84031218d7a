@@ -1,0 +1,101 @@
+/******************************************************************************
+ *
+ * Module: Some of implementation of functions
+ *
+ * File Name: function_system.c
+ *
+ * Description: Implementation to the function of the system
+ *
+ * Author: Bilal Mohamed
+ *
+ *******************************************************************************/
+
+#include "function_system.h"
+
+/*
+ * Description :
+ * Select Mode (main)Function
+ */
+
+void SelectMode_Func(void)
+{
+    uint32 Mode;
+    printf("\n<<<<<<<<<<<<<<<<<<   Welcome To Clinic_Management_System   >>>>>>>>>>>>>>>>>>\n\n");
+    printf("*** Please Choise Your Mode :- \n");
+    printf("-----------------------------------------\n");
+    printf("For Admin Mode press : 1\n");
+    printf("For User Mode press : 2\n");
+
+    scanf("%d",&Mode);
+    printf("\n");
+
+
+    switch(Mode)
+    {
+    case 1 :
+        // Call The Admin Mode Function
+        Admin_Mode();
+        break;
+    case 2 :
+        // Call The User Mode Function
+        User_Mode();
+        break;
+    default :
+        /* Print A Message For The User To Re Enter The Right Choice */
+        printf("<<<<<<<<<<<<<<<<<<<<<<<<<< Invalid Choice >>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+        printf("<<<<<<<<<<<<<<<<<<<<<<<<<< Please Choose The Right Mode >>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+
+    }
+
+}
+
+/*
+ * Description :
+ * Admin Mode Functions
+ */
+
+void Admin_Mode(void)
+{
+	uint32 Pass;
+	uint32 Count=0;
+    printf("<<<<<<<<<<<<<<<<<<   Welcome To Admin Mode   >>>>>>>>>>>>>>>>>>\n");
+    printf("Please Enter Your Password :");
+    scanf("%d",&Pass);
+    if (Pass == PASSWORD)
+    {
+        Admin_ChoiceFunc();
+
+    }
+    else if (Pass != PASSWORD)       // If the entered password is wrong
+    {
+        for (i=0; i<2; i++)        // Only 3 times again
+        {
+
+            // To Explain The Remaining times To The Admin
+
+            if ( i < 1)
+
+            {
+                printf("Wrong Password ......... you have %d times\nPlease Enter Password Again : ", 2-i );
+            }
+            else
+            {
+                printf("This is the Last time Please Enter The Correct Password : ");
+            }
+
+
+
+            scanf("%d",&Pass);
+            if (Pass == PASSWORD)// in case he enter correct passs in trial
+            {
+                Admin_ChoiceFunc();
+            }
+        }
+        //to test the condition after the for loop
+        if (Pass != PASSWORD)
+        {
+            printf("Incorrect password for 3 times : Sorry No more tries :( ");
+        }
+    }
+
+}

@@ -1,0 +1,18 @@
+ /******************************************************************************
+ *
+ * Module: Common - Platform Types Abstraction
+ *
+ * File Name: std_types.h
+ *
+ * Description: types for DATA
+ *
+ * Author: Bilal Mohamed
+ *
+ *******************************************************************************/
+
+#ifndef FUNCTION_SYSTEM_H_
+#define FUNCTION_SYSTEM_H_
+
+
+
+#endif /* FUNCTION_SYSTEM_H_ */

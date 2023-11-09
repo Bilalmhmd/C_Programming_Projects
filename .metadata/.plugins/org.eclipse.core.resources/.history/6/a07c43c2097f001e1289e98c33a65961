@@ -1,0 +1,22 @@
+/******************************************************************************
+ *
+ * Module: Clinic_Management_System
+ *
+ * File Name: Application.c
+ *
+ * Description: the main function of application
+ *
+ * Author: Bilal Mohamed
+ *
+ *******************************************************************************/
+
+#include "function_system.h"
+
+int main(void)
+{
+    /* Call The Select Mode Functions */
+    SelectMode_Func();
+
+
+    return 0;
+}

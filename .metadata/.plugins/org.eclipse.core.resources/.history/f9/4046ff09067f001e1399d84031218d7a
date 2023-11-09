@@ -1,0 +1,223 @@
+/******************************************************************************
+ *
+ * Module: Some of implementation of functions
+ *
+ * File Name: function_system.c
+ *
+ * Description: Implementation to the function of the system
+ *
+ * Author: Bilal Mohamed
+ *
+ *******************************************************************************/
+
+#include "function_system.h"
+
+/*
+ * Description :
+ * Select Mode (main)Function
+ */
+
+void SelectMode_Func(void)
+{
+    uint32 Mode;
+    printf("\n<<<<<<<<<<<<<<<<<<   Welcome To Clinic_Management_System   >>>>>>>>>>>>>>>>>>\n\n");
+    printf("*** Please Choise Your Mode :- \n");
+    printf("-----------------------------------------\n");
+    printf("For Admin Mode press : 1\n");
+    printf("For User Mode press : 2\n");
+
+    scanf("%d",&Mode);
+    printf("\n");
+
+
+    switch(Mode)
+    {
+    case 1 :
+        // Call The Admin Mode Function
+        Admin_Mode();
+        break;
+    case 2 :
+        // Call The User Mode Function
+        User_Mode();
+        break;
+    default :
+        /* Print A Message For The User To Re Enter The Right Choice */
+        printf("<<<<<<<<<<<<<<<<<<<<<<<<<< Invalid Choice >>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+        printf("<<<<<<<<<<<<<<<<<<<<<<<<<< Please Choose The Right Mode >>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+        SelectMode_Func(); // return again to the main function
+        break;
+    }
+}
+
+/*
+ * Description :
+ * Admin Mode Functions
+ */
+
+void Admin_Mode(void)
+{
+	uint32 Pass;
+	uint32 Count = 0;
+    printf("<<<<<<<<<<<<<<<<<<   Welcome To Admin Mode   >>>>>>>>>>>>>>>>>>\n");
+    printf("Please Enter Your Password :");
+    scanf("%d",&Pass);
+    if (Pass == PASSWORD)
+    {
+        Admin_ChoiceFunc();
+
+    }
+    else if (Pass != PASSWORD)       // If the entered password is wrong
+    {
+        for (i=0; i<2; i++)        // Only 3 times again
+        {
+
+            // To Explain The Remaining times To The Admin
+
+            if ( i < 1)
+
+            {
+                printf("Wrong Password ......... you have %d times\nPlease Enter Password Again : ", 2-i );
+            }
+            else
+            {
+                printf("This is the Last time Please Enter The Correct Password : ");
+            }
+
+
+
+            scanf("%d",&Pass);
+            if (Pass == PASSWORD)// in case he enter correct passs in trial
+            {
+                Admin_ChoiceFunc();
+            }
+        }
+        //to test the condition after the for loop
+        if (Pass != PASSWORD)
+        {
+            printf("Incorrect password for 3 times : Sorry No more tries :( ");
+        }
+    }
+}
+
+
+void Admin_ChoiceFunc(void)
+{
+
+	uint32 Choice_Num;
+
+
+    while(1)
+    {
+        printf("\nWelcome to Admin Mode Functions\n");
+		printf("------------------------------------------------------------------\n");
+        printf("1-Add New Patient Record \n");
+        printf("2-Edit Patient Records \n");
+        printf("3-Reserve A Slot With A doctor \n");
+        printf("4-Cancel Reservation \n");
+        printf("5-Return to the Select Mode Page \n");
+
+        /* Scanning The Admin Required Choice */
+        printf("Please Enter The Number That Represent Your Choice From This List :");
+        scanf("%d",&Choice_Num);
+
+        switch (Choice_Num)
+        {
+
+        case 1:
+            printf("------------------------------------------------------------------\n");
+			/* Call Add New Patient Informations Function To The Clinic Database */
+            AddPatient_Func();
+            break;
+
+        case 2:
+            printf("------------------------------------------------------------------\n");
+			/* Call Edit Patient Informations Function In The Clinic Database */
+            EditPatientInfo_Func();
+            break;
+
+        case 3:
+            printf("------------------------------------------------------------------\n");
+			/* Call Reserve Slot With A Doctor Function For Certain Patient  */
+            ReserveSlot_Func();
+            break;
+
+        case 4:
+            printf("------------------------------------------------------------------\n");
+			/* Call Cancel The Reservation Of Doctor Function For Certain Patient */
+            CancelReservation_Func();
+            break;
+
+        case 5:
+            printf("------------------------------------------------------------------\n");
+			/* Call The Select Mode Again To Return Back To The Select Mode Page Again */
+            SelectMode_Func();
+            break;
+        default:
+            printf("                     ********* Invalid Choice ********* \n");
+            printf("             ********* Please Choose the right action ********* \n");
+            Admin_ChoiceFunc(); //return again to the main function
+            break;
+        }
+    }
+}
+
+
+void AddPatient_Func(void)
+{
+    if(availableSlots)
+    {
+        /* Create New Node Containing The New Patient Informations */
+        struct Patient_Node *link = (struct Patient_Node*) malloc(sizeof(struct Patient_Node));
+
+        /* Scanning The Patient Informations From The Admin */
+        printf("                ********* Please Enter The Patient Informations ********* \n");
+        printf("\n");
+        printf("Patient Name : ");
+        scanf("%s",&link->name);
+        printf("\n");
+        printf("Patient Age : ");
+        scanf("%d",&link->age);
+        printf("\n");
+        printf("Patient Gender : ");
+        scanf("%s",&link->gender);
+        printf("\n");
+        printf("Patient ID : ");
+        scanf("%d",&link->id);
+        printf("\n");
+
+        /* Set The Intitial Value Of The Next Of The New Link Node To NULL */
+        link->next = NULL;
+        /* Check If There Is Already Node Exist Or Not */
+        if(head == NULL)
+        {
+            /* As The Head Pointer Still NULL And There Is No Linked List So Create A New Node In The Linked List */
+            head = link;
+        }
+        else
+        {
+            struct Patient_Node *Ptr1,*Ptr2;
+            Ptr1 = Ptr2 = head;
+            /*Check If the Input ID Is Already Exist Or Not And If it Exists Re Enter A New ID */
+            while(Ptr2 != NULL)
+            {
+                if(link->id == Ptr2->id)
+                {
+                    printf("\nThis ID already exists.\n"
+                           "Please Enter New ID : ");
+                    scanf("%d",&link->id);
+                    Ptr2 = head;
+                }
+                Ptr1 = Ptr2;
+                Ptr2 = Ptr2->next;
+            }
+            Ptr1->next = link;
+        }
+    }
+    /* If There Is No Availible Slots For Doctor Reservations Print A Message
+     *          For The Admin That There is No Availible Slots               */
+    else
+    {
+        printf("Sorry There Are No Available Slots \n");
+    }
+
+}

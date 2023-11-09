@@ -1,0 +1,49 @@
+/******************************************************************************
+ *
+ * Module: Some of implementation of functions
+ *
+ * File Name: function_system.c
+ *
+ * Description: Implementation to the function of the system
+ *
+ * Author: Bilal Mohamed
+ *
+ *******************************************************************************/
+
+
+/*
+ * Description :
+ * Select Mode (main)Function
+ */
+
+void SelectMode_Func(void)
+{
+    uint32 Mode;
+    printf("\n<<<<<<<<<<<<<<<<<<   Welcome To Clinic_Management_System   >>>>>>>>>>>>>>>>>>\n\n");
+    printf("*** Please Choise Your Mode :- \n");
+    printf("-----------------------------------------\n");
+    printf("For Admin Mode press : 1\n");
+    printf("For User Mode press : 2\n");
+
+    scanf("%d",&Mode);
+    printf("\n");
+
+
+    switch(Mode)
+    {
+    case 1 :
+        // Call The Admin Mode Function
+        Admin_Mode();
+        break;
+    case 2 :
+        // Call The User Mode Function
+        User_Mode();
+        break;
+    default :
+        /* Print A Message For The User To Re Enter The Right Choice */
+        printf("<<<<<<<<<<<<<<<<<<<<<<<<<< Invalid Choice >>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+        printf("<<<<<<<<<<<<<<<<<<<<<<<<<< Please Choose The Right Mode >>>>>>>>>>>>>>>>>>>>>>>>>>>>> \n");
+
+    }
+
+}

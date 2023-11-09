@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Clinic_Management_System/common_macros.h&apos;" deleteContents="false" description="Delete resource &apos;Clinic_Management_System/common_macros.h&apos;" element1="/Clinic_Management_System/common_macros.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1699535316595"/>
+</session>

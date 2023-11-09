@@ -1,0 +1,31 @@
+/******************************************************************************
+ *
+ * Module: Clinic_Management_System
+ *
+ * File Name: Application.c
+ *
+ * Description: the main function of application
+ *
+ * Author: Bilal Mohamed
+ *
+ *******************************************************************************/
+
+#include "function_system.h"
+#include <stdio.h>
+#include "std_types.h"
+
+struct Patient_Node *head = NULL_PTR;
+uint32 availableSlots = 5;    // No.available slots
+uint32 arr[5] = {1,2,3,4,5};  //array of available slots
+uint32 i ;
+
+int main(void)
+{
+	setvbuf(stdout,NULL_PTR,_IONBF,0);
+	setvbuf(stderr,NULL_PTR,_IONBF,0);
+	/* Call The Select Mode Functions */
+	SelectMode_Func();
+
+
+	return 0;
+}
