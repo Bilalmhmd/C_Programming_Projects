@@ -1,0 +1,53 @@
+Info: Nothing to build for Project
+Info: Nothing to build for Project
+02:34:30 **** Incremental Build of configuration Debug for project Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Project.o" "..\\src\\Project.c" 
+gcc -o Project.exe "src\\Project.o" 
+Info: Nothing to build for vbnbvnb
+Info: Nothing to build for Project
+02:35:13 **** Incremental Build of configuration Debug for project Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Project.o" "..\\src\\Project.c" 
+gcc -o Project.exe "src\\Project.o" 
+Info: Nothing to build for vbnbvnb
+Info: Nothing to build for Project
+02:36:37 **** Incremental Build of configuration Debug for project Project ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Project.o" "..\\src\\Project.c" 
+gcc -o Project.exe "src\\Project.o" 
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot open output file Project.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for vbnbvnb
+02:37:08 **** Incremental Build of configuration Debug for project Project ****
+Info: Internal Builder is used for build
+gcc -o Project.exe "src\\Project.o" 
+Info: Nothing to build for vbnbvnb
+Info: Nothing to build for Project
+03:41:09 **** Rebuild of configuration Debug for project Mini_Project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini_Project1.o" "..\\src\\Mini_Project1.c" 
+gcc -o Mini_Project1.exe "src\\Mini_Project1.o" 
+03:47:44 **** Incremental Build of configuration Debug for project Mini_Project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini_Project1.o" "..\\src\\Mini_Project1.c" 
+gcc -o Mini_Project1.exe "src\\Mini_Project1.o" 
+03:47:47 **** Incremental Build of configuration Debug for project Mini_Project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini_Project1.o" "..\\src\\Mini_Project1.c" 
+gcc -o Mini_Project1.exe "src\\Mini_Project1.o" 
+03:47:51 **** Incremental Build of configuration Debug for project Mini_Project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini_Project1.o" "..\\src\\Mini_Project1.c" 
+gcc -o Mini_Project1.exe "src\\Mini_Project1.o" 
+13:20:22 **** Incremental Build of configuration Debug for project Mini_Project1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mini_Project1.o" "..\\src\\Mini_Project1.c" 
+gcc -o Mini_Project1.exe "src\\Mini_Project1.o" 
+Info: Nothing to build for Mini_Project1
+Info: Nothing to build for Mini_Project1
+Info: Nothing to build for Mini_Project1
+Info: Nothing to build for Mini_Project1
+Info: Nothing to build for Mini_Project1
+Info: Nothing to build for Mini_Project1
+Info: Nothing to build for Mini_Project1
