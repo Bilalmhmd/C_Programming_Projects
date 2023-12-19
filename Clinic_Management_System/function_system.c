@@ -245,7 +245,7 @@ void EditPatientInfo_Func(void)
 	printf("\nPlease Enter the ID of the patient that you want to change His/Her Information : ");
 	scanf("%d",&ID);
 	/* Search For The Patient ID That You Want To Edit His/Her Informations */
-	while(Ptr1->next != (NULL_PTR + 1))
+	while(Ptr1 != NULL_PTR)
 	{
 		if(ID == Ptr1->id)
 		{
